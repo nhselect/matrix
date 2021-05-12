@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: 'resources'
+    label: 'Resources'
+    folder: 'content/resources'
+    format: 'frontmatter'
+    create: true
+    slug: '{{type}}-{{manufacturer}}-{{model}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Type', name: 'type', widget: 'string' }
+      - { label: 'Manufacturer', name: 'manufacturer', widget: 'datetime' }
+      - { label: 'Model', name: 'model', widget: 'string' }
