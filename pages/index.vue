@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container grid">
     <div>
       <header class="content-logos">
         <logo />
@@ -55,7 +55,6 @@ export default {
 .container {
   margin: 0 auto;
   min-height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -96,7 +95,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 500px;
 }
 
 .plus {

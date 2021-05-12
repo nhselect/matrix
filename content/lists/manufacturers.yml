@@ -1,0 +1,59 @@
+manufacturers:
+  - name: ABG - I - Stat
+  - name: ABG - Radiometer
+  - name: AeonMed
+  - name: B Braun
+  - name: Baxter
+  - name: Beijing Eternity Electronics Technology Co. Ltd
+  - name: Beyond Sunfusion
+  - name: Biomed
+  - name: Braun-Perfusor
+  - name: Breas
+  - name: Breas
+  - name: CareFusion
+  - name: CareFusion-Alaris
+  - name: ChenWei
+  - name: Codan
+  - name: DeepMed
+  - name: Drager
+  - name: Edan
+  - name: Flight Medical
+  - name: Fresenius
+  - name: Fresenius Kabi
+  - name: GeHealthcare
+  - name: Generic BP
+  - name: Generic NIV
+  - name: Generic PulseOximetry
+  - name: Generic SyringePump
+  - name: Generic Temp(non-invasive)
+  - name: Generic Ventilator
+  - name: Generic VolPump
+  - name: Hamilton
+  - name: Hawk
+  - name: Hawkmed
+  - name: Inovytec
+  - name: LoewensteinMedical
+  - name: MS Westfalia
+  - name: Maquet
+  - name: Medacx
+  - name: Medcaptain
+  - name: Medfusion
+  - name: Medtronic
+  - name: Mindray
+  - name: Nanjing Superstar
+  - name: NorthenMeditec
+  - name: Nutricia
+  - name: OES Medical
+  - name: Penlon
+  - name: Philips
+  - name: Prunus Boaray
+  - name: ResMed
+  - name: ShenzhenAmbulance
+  - name: Sino Medical
+  - name: Siriusmed
+  - name: Smiths
+  - name: Tongye
+  - name: Tympanic - Cardinal Health
+  - name: VyaireMedical
+  - name: WeinmannMedumat
+  - name: Zoll- name

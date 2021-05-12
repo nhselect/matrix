@@ -1,10 +1,63 @@
 backend:
   name: git-gateway
 
+local_backend: true
+
 media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: 'lists'
+    label: 'Lists'
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: 'types'
+        label: 'Types'
+        file: 'content/lists/types.yml'
+        description: 'Types of Equipment'
+        create: true
+        editor:
+          preview: false
+        fields:
+          - name: types
+            label: Types
+            label_singular: 'Type'
+            widget: list
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+
+      - name: 'manufacturers'
+        label: 'Manufacturers'
+        file: 'content/lists/manufacturers.yml'
+        description: 'Manufacturers of Equipment'
+        create: true
+        editor:
+          preview: false
+        fields:
+          - name: manufacturers
+            label: Manufacturers
+            label_singular: 'Manufacturer'
+            widget: list
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+
+      - name: 'linkTypes'
+        label: 'Link Types'
+        file: 'content/lists/linkTypes.yml'
+        description: 'Link Types'
+        create: true
+        editor:
+          preview: false
+        fields:
+          - name: linkTypes
+            label: 'Link Types'
+            label_singular: 'Link Types'
+            widget: list
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+
   - name: 'resources'
     label: 'Resources'
     folder: 'content/resources'
@@ -14,12 +67,31 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Type', name: 'type', widget: 'string' }
-      - { label: 'Manufacturer', name: 'manufacturer', widget: 'string' }
+      - name: type
+        label: Type
+        widget: relation
+        collection: 'lists'
+        file: 'types'
+        search_fields: ["types.*.name"]
+        value_field: "types.*.name"
+      - name: manufacturer
+        label: Manufacturer
+        widget: relation
+        collection: 'lists'
+        file: 'manufacturers'
+        search_fields: ["manufacturers.*.name"]
+        value_field: "manufacturers.*.name"
       - { label: 'Model', name: 'model', widget: 'string' }
-      - { label: 'Training Videos', name: 'trainingVideos', widget: 'string' }
-      - { label: 'Other Training', name: 'otherTraining', widget: 'string' }
-      - { label: 'Clinician Manual', name: 'clinicianManual', widget: 'string' }
-      - { label: 'Quick Guide', name: 'quickGuide', widget: 'string' }
-      - { label: 'Technical Advanced', name: 'technicalAdvanced', widget: 'string' }
-      - { label: 'Full Manual', name: 'fullManual', widget: 'string' }
+      - name: 'links'
+        label: 'Links'
+        label_singular: 'Link'
+        widget: list
+        fields: 
+          - name: linkType
+            label: 'Link Type' 
+            widget: relation
+            collection: 'lists'
+            file: 'linkTypes'
+            search_fields: ["linkTypes.*.name"]
+            value_field: "linkTypes.*.name"
+          - { label: 'URL', name: 'url', widget: 'string' }

@@ -1,34 +1,142 @@
 <template>
-  <div class="grid">
-    <vs-row vs-w="12" type="flex" justify="center" align="center">
-      <vs-select v-model="value" placeholder="Select">
-        <vs-option label="Vuesax" value="1"> Vuesax </vs-option>
-        <vs-option label="Vue" value="2"> Vue </vs-option>
-        <vs-option label="Javascript" value="3"> Javascript </vs-option>
-        <vs-option disabled label="Sass" value="4"> Sass </vs-option>
-        <vs-option label="Typescript" value="5"> Typescript </vs-option>
-        <vs-option label="Webpack" value="6"> Webpack </vs-option>
-        <vs-option label="Nodejs" value="7"> Nodejs </vs-option>
+  <div v-if="resources.length > 0">
+    <vs-row type="flex" justify="space-around" align="center">
+      <vs-select
+        v-model="type"
+        placeholder="Select"
+        label="Resource Type"
+        class="select"
+      >
+        <vs-option
+          v-for="type in getTypes()"
+          :key="type"
+          :label="type"
+          :value="type"
+          >{{ type }}</vs-option
+        >
       </vs-select>
-      <vs-select v-if="hide" v-model="value" placeholder="Select">
-        <vs-option label="Vuesax" value="1"> Vuesax </vs-option>
-        <vs-option label="Vue" value="2"> Vue </vs-option>
-        <vs-option label="Javascript" value="3"> Javascript </vs-option>
-        <vs-option disabled label="Sass" value="4"> Sass </vs-option>
-        <vs-option label="Typescript" value="5"> Typescript </vs-option>
-        <vs-option label="Webpack" value="6"> Webpack </vs-option>
-        <vs-option label="Nodejs" value="7"> Nodejs </vs-option>
+      <vs-select
+        v-if="type"
+        v-model="manufacturer"
+        placeholder="Select"
+        label="Manufacturer"
+        class="select"
+      >
+        <vs-option
+          v-for="manufacturer in getManufacturers()"
+          :key="manufacturer"
+          :label="manufacturer"
+          :value="manufacturer"
+          >{{ manufacturer }}</vs-option
+        >
       </vs-select>
+      <vs-select
+        v-if="manufacturer"
+        v-model="model"
+        placeholder="Select"
+        label="Model"
+        class="select"
+      >
+        <vs-option
+          v-for="model in getModels()"
+          :key="model"
+          :label="model"
+          :value="model"
+          >{{ model }}</vs-option
+        >
+      </vs-select>
+    </vs-row>
+    <vs-row v-if="model" type="flex" justify="space-around" align="center">
+      <div class="links">
+        <a
+          v-for="link in getLinks()"
+          :key="link.url"
+          :href="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--green"
+          >{{ link.linkType }}</a
+        >
+      </div>
     </vs-row>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component, Watch } from 'nuxt-property-decorator'
+import { IResource } from '~/interfaces'
 
 @Component
 export default class Resources extends Vue {
-  value = ''
-  hide = false
+  resources: IResource[] = []
+  type = ''
+  manufacturer = ''
+  model = ''
+
+  @Watch('type')
+  onTypeChanged() {
+    this.manufacturer = ''
+    this.model = ''
+  }
+
+  async fetch(): Promise<void> {
+    const resources = (await this.$content('resources').fetch()) as IResource[]
+    if (Array.isArray(resources)) {
+      this.resources = resources
+    } else {
+      this.resources = [resources]
+    }
+  }
+
+  getTypes() {
+    return [...new Set(this.resources.map((resource) => resource.type))]
+  }
+
+  getManufacturers() {
+    return [
+      ...new Set(
+        this.resources
+          .filter((resource) => {
+            return resource.type === this.type
+          })
+          .map((resource) => resource.manufacturer)
+      ),
+    ]
+  }
+
+  getModels() {
+    return [
+      ...new Set(
+        this.resources
+          .filter((resource) => {
+            return (
+              resource.type === this.type &&
+              resource.manufacturer === this.manufacturer
+            )
+          })
+          .map((resource) => resource.model)
+      ),
+    ]
+  }
+
+  getLinks() {
+    const resource = this.resources.filter((resource) => {
+      return (
+        resource.type === this.type &&
+        resource.manufacturer === this.manufacturer &&
+        resource.model === this.model
+      )
+    })
+
+    if (resource) {
+      return resource[0].links
+    }
+  }
 }
 </script>
+
+<style scoped>
+.select {
+  margin: 5%;
+}
+</style>
