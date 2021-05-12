@@ -15,5 +15,11 @@ collections:
       preview: false
     fields:
       - { label: 'Type', name: 'type', widget: 'string' }
-      - { label: 'Manufacturer', name: 'manufacturer', widget: 'datetime' }
+      - { label: 'Manufacturer', name: 'manufacturer', widget: 'string' }
       - { label: 'Model', name: 'model', widget: 'string' }
+      - { label: 'Training Videos', name: 'trainingVideos', widget: 'string' }
+      - { label: 'Other Training', name: 'otherTraining', widget: 'string' }
+      - { label: 'Clinician Manual', name: 'clinicianManual', widget: 'string' }
+      - { label: 'Quick Guide', name: 'quickGuide', widget: 'string' }
+      - { label: 'Technical Advanced', name: 'technicalAdvanced', widget: 'string' }
+      - { label: 'Full Manual', name: 'fullManual', widget: 'string' }
