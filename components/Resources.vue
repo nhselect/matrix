@@ -81,11 +81,18 @@ export default class Resources extends Vue {
   onTypeChanged() {
     this.manufacturer = ''
     this.model = ''
+    if (this.getManufacturers().length === 1) {
+      this.manufacturer = this.getManufacturers()[0]
+    }
   }
 
   @Watch('manufacturer')
   onManufacturerChanged() {
     this.model = ''
+
+    if (this.getModels().length === 1) {
+      this.model = this.getModels()[0]
+    }
   }
 
   async fetch(): Promise<void> {
