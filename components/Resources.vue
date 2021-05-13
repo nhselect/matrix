@@ -42,6 +42,7 @@
             :key="model"
             :label="model"
             :value="model"
+            placeholder="Model"
           >
             {{ model }}
           </option>
