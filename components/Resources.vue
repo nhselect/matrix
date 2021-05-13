@@ -54,7 +54,7 @@
           :href="link.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="button--green"
+          class="select button--green"
           >{{ link.linkType }}</a
         >
       </div>
