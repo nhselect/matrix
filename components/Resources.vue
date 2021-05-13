@@ -19,7 +19,7 @@
         v-if="type"
         v-model="manufacturer"
         placeholder="Select"
-        label="Manufacturer"
+        label="Model"
         class="select"
       >
         <vs-option
@@ -46,18 +46,16 @@
         >
       </vs-select>
     </vs-row>
-    <vs-row v-if="model" type="flex" justify="space-around" align="center">
-      <div class="links">
-        <a
-          v-for="link in getLinks()"
-          :key="link.url"
-          :href="link.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="select button--green"
-          >{{ link.linkType }}</a
-        >
-      </div>
+    <vs-row v-if="model" justify="space-around" align="center">
+      <a
+        v-for="link in getLinks()"
+        :key="link.url"
+        :href="link.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="select button--green"
+        >{{ link.linkType }}</a
+      >
     </vs-row>
   </div>
 </template>
@@ -79,6 +77,11 @@ export default class Resources extends Vue {
     this.model = ''
   }
 
+  @Watch('manufacturer')
+  onManufacturerChanged() {
+    this.model = ''
+  }
+
   async fetch(): Promise<void> {
     const resources = (await this.$content('resources').fetch()) as IResource[]
     if (Array.isArray(resources)) {
@@ -89,11 +92,13 @@ export default class Resources extends Vue {
   }
 
   getTypes() {
-    return [...new Set(this.resources.map((resource) => resource.type))]
+    const types = [...new Set(this.resources.map((resource) => resource.type))]
+    console.log(this.type)
+    return types
   }
 
   getManufacturers() {
-    return [
+    const manufacturers = [
       ...new Set(
         this.resources
           .filter((resource) => {
@@ -102,10 +107,12 @@ export default class Resources extends Vue {
           .map((resource) => resource.manufacturer)
       ),
     ]
+    console.log(manufacturers)
+    return manufacturers
   }
 
   getModels() {
-    return [
+    const models = [
       ...new Set(
         this.resources
           .filter((resource) => {
@@ -117,6 +124,8 @@ export default class Resources extends Vue {
           .map((resource) => resource.model)
       ),
     ]
+    console.log(models)
+    return models
   }
 
   getLinks() {

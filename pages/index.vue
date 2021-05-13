@@ -87,20 +87,13 @@ export default {
 }
 
 .links {
-  padding-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .content-logos {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.plus {
-  font-size: 2.5rem;
-  margin: 15px;
-  color: #35495e;
 }
 
 .h3 {
