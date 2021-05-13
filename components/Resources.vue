@@ -50,18 +50,17 @@
       </b-field>
     </div>
     <div v-if="model" justify="space-around" align="center">
-      <b-button
+      <a
         v-for="link in getLinks()"
         :key="link.url"
         :href="link.url"
         target="_blank"
         rel="noopener noreferrer"
-        type="is-primary"
-        outlined
-        class="margin"
       >
-        {{ link.linkType }}
-      </b-button>
+        <b-button type="is-primary" outlined class="margin">
+          {{ link.linkType }}
+        </b-button>
+      </a>
     </div>
   </div>
 </template>
