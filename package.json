@@ -23,11 +23,10 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
-    "boxicons": "^2.0.7",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
-    "nuxt-property-decorator": "^2.9.1",
-    "vuesax": "^4.0.1-alpha.25"
+    "nuxt-buefy": "^0.4.4",
+    "nuxt-property-decorator": "^2.9.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",

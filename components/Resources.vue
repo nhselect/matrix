@@ -1,62 +1,67 @@
 <template>
   <div v-if="resources.length > 0">
-    <vs-row type="flex" justify="space-around" align="center">
-      <vs-select
-        v-model="type"
-        placeholder="Select"
-        label="Resource Type"
-        class="select"
-      >
-        <vs-option
-          v-for="type in getTypes()"
-          :key="type"
-          :label="type"
-          :value="type"
-          >{{ type }}</vs-option
+    <div type="flex" justify="space-around" align="center">
+      <b-field label="Resource Type">
+        <b-select
+          v-model="type"
+          placeholder="Resource Type"
+          class="margin"
+          rounded
         >
-      </vs-select>
-      <vs-select
-        v-if="type"
-        v-model="manufacturer"
-        placeholder="Select"
-        label="Model"
-        class="select"
-      >
-        <vs-option
-          v-for="manufacturer in getManufacturers()"
-          :key="manufacturer"
-          :label="manufacturer"
-          :value="manufacturer"
-          >{{ manufacturer }}</vs-option
+          <option
+            v-for="type in getTypes()"
+            :key="type"
+            :label="type"
+            :value="type"
+          >
+            {{ type }}
+          </option>
+        </b-select>
+      </b-field>
+      <b-field v-if="type" label="Manufacturer">
+        <b-select
+          v-model="manufacturer"
+          placeholder="Manufacturer"
+          class="margin"
+          rounded
         >
-      </vs-select>
-      <vs-select
-        v-if="manufacturer"
-        v-model="model"
-        placeholder="Select"
-        label="Model"
-        class="select"
-      >
-        <vs-option
-          v-for="model in getModels()"
-          :key="model"
-          :label="model"
-          :value="model"
-          >{{ model }}</vs-option
-        >
-      </vs-select>
-    </vs-row>
-    <vs-row v-if="model" justify="space-around" align="center">
-      <a
+          <option
+            v-for="manufacturer in getManufacturers()"
+            :key="manufacturer"
+            :label="manufacturer"
+            :value="manufacturer"
+          >
+            {{ manufacturer }}
+          </option>
+        </b-select>
+      </b-field>
+      <b-field v-if="manufacturer" label="Model">
+        <b-select v-model="model" placeholder="Model" class="margin" rounded>
+          <option
+            v-for="model in getModels()"
+            :key="model"
+            :label="model"
+            :value="model"
+          >
+            {{ model }}
+          </option>
+        </b-select>
+      </b-field>
+    </div>
+    <div v-if="model" justify="space-around" align="center">
+      <b-button
         v-for="link in getLinks()"
         :key="link.url"
         :href="link.url"
         target="_blank"
         rel="noopener noreferrer"
-        class="select button--green"
-        >{{ link.linkType }}</a
+        type="is-primary"
+        outlined
+        class="margin"
       >
-    </vs-row>
+        {{ link.linkType }}
+      </b-button>
+    </div>
   </div>
 </template>
 
@@ -92,13 +97,11 @@ export default class Resources extends Vue {
   }
 
   getTypes() {
-    const types = [...new Set(this.resources.map((resource) => resource.type))]
-    console.log(this.type)
-    return types
+    return [...new Set(this.resources.map((resource) => resource.type))].sort()
   }
 
   getManufacturers() {
-    const manufacturers = [
+    return [
       ...new Set(
         this.resources
           .filter((resource) => {
@@ -106,13 +109,11 @@ export default class Resources extends Vue {
           })
           .map((resource) => resource.manufacturer)
       ),
-    ]
-    console.log(manufacturers)
-    return manufacturers
+    ].sort()
   }
 
   getModels() {
-    const models = [
+    return [
       ...new Set(
         this.resources
           .filter((resource) => {
@@ -123,9 +124,7 @@ export default class Resources extends Vue {
           })
           .map((resource) => resource.model)
       ),
-    ]
-    console.log(models)
-    return models
+    ].sort()
   }
 
   getLinks() {
@@ -145,7 +144,7 @@ export default class Resources extends Vue {
 </script>
 
 <style scoped>
-.select {
+.margin {
   margin: 5%;
 }
 </style>
