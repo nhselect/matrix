@@ -1,10 +1,10 @@
 ---
-type: Syringe Pump
-manufacturer: Codan
-model: Argus 606S
+type: Ventilator
+manufacturer: Breas
+model: Nippy Junior+
 links:
-  - linkType: Training Videos
-    url: https://portal.e-lfh.org.uk/Component/Details/613693
-  - linkType: Other Training
-    url: https://portal.e-lfh.org.uk/Component/Details/613699
+  - linkType: Quick Guide
+    url: https://portal.e-lfh.org.uk/Component/Details/684231
+  - linkType: Clinician Manual
+    url: https://portal.e-lfh.org.uk/Component/Details/684237
 ---
