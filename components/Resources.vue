@@ -5,22 +5,27 @@
       @changeModel="links = $event"
       @clear="links = ''"
     />
-    <link v-if="links" :links="links" justify="space-around" align="center" />
+    <Link
+      v-if="links.length > 0"
+      :links="links"
+      justify="space-around"
+      align="center"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import Picker from '@/components/Picker.vue'
-import Link from '~/components/Link.vue'
-import { IResource } from '~/interfaces'
+import Link from '@/components/Link.vue'
+import { ILink, IResource } from '~/interfaces'
 
 @Component({
   components: { Picker, Link },
 })
 export default class Resources extends Vue {
   resources: IResource[] = []
-  links = ''
+  links: ILink[] = []
 
   async fetch(): Promise<void> {
     const resources = (await this.$content('resources').fetch()) as IResource[]
