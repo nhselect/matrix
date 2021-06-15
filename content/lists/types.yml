@@ -11,4 +11,3 @@ types:
   - name: Thermometer
   - name: Ventilator
   - name: Volumetric Pump
-  - name: Example equipment type
