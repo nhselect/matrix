@@ -11,3 +11,4 @@ types:
   - name: Thermometer
   - name: Ventilator
   - name: Volumetric Pump
+  - name: High flow oxygen devices
