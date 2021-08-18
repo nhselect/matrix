@@ -1,8 +1,8 @@
 ---
-type: High flow oxygen devices
-manufacturer: Eg
-model: xx
+type: Ventilator
+manufacturer: Philips
+model: E30
 links:
-  - linkType: Youtube
-    url: https://consent.youtube.com/m?continue=https%3A%2F%2Fwww.youtube.com%2Fhashtag%2Fyoutbe&gl=GB&m=0&pc=yt&uxe=23983172&hl=en&src=1
+  - url: https://portal.e-lfh.org.uk/Component/Details/717172
+    linkType: Quick Guide
 ---
