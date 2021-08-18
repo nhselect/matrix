@@ -6,7 +6,7 @@ links:
   - linkType: Quick Guide
     url: https://portal.e-lfh.org.uk/Component/Details/631090
   - linkType: Clinician Manual
-    url: https://portal.e-lfh.org.uk/Component/Details/639380
+    url: https://portal.e-lfh.org.uk/Component/Details/718807
   - linkType: Full Manual
     url: https://portal.e-lfh.org.uk/Component/Details/643546
   - linkType: Technical Advanced
