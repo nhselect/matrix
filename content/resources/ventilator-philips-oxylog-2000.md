@@ -1,8 +1,8 @@
 ---
 type: Ventilator
-manufacturer: Philips
+manufacturer: Drager
 model: Oxylog 2000
 links:
-  - linkType: Clinician Manual
-    url: https://portal.e-lfh.org.uk/Component/Details/717188
+  - url: https://portal.e-lfh.org.uk/Component/Details/717192
+    linkType: Quick Guide
 ---
