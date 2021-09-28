@@ -1,7 +1,7 @@
 ---
 type: Syringe Pump
-manufacturer: Braun-Perfusor
-model: Space
+manufacturer: B Braun
+model: Perfusor Space
 links:
   - linkType: Training Videos
     url: https://portal.e-lfh.org.uk/Component/Details/613805
