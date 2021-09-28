@@ -1,7 +1,7 @@
 ---
 type: Syringe Pump
 manufacturer: Fresenius
-model: Kabi-Injectomat Agilia
+model: Injectomat Agilia
 links:
   - linkType: Training Videos
     url: https://portal.e-lfh.org.uk/Component/Details/613845
