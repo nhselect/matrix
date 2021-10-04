@@ -1,5 +1,5 @@
 ---
-type: NIV
+type: NIV - CPAP & BiPAP
 manufacturer: Breas
 model: Vivo 2
 links:
