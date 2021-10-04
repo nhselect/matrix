@@ -1,5 +1,5 @@
 ---
-type: NIV
+type: NIV - CPAP & BiPAP
 manufacturer: CareFusion
 model: Infant Flow LP System Headgear
 links:
