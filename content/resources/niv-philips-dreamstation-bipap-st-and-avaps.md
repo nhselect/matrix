@@ -1,5 +1,5 @@
 ---
-type: NIV
+type: NIV - CPAP & BiPAP
 manufacturer: Philips
 model: DreamStation BiPAP ST and AVAPS
 links:
