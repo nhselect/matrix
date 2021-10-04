@@ -1,5 +1,5 @@
 ---
-type: NIV
+type: NIV - CPAP & BiPAP
 manufacturer: Philips
 model: BIPAP A30/40
 links:
