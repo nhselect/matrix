@@ -15,4 +15,6 @@ links:
     url: https://portal.e-lfh.org.uk/Component/Details/718895
   - linkType: Other Training
     url: https://portal.e-lfh.org.uk/Component/Details/718875
+  - linkType: Training Videos
+    url: https://portal.e-lfh.org.uk/Component/Details/708565
 ---
