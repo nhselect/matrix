@@ -25,7 +25,7 @@
           rel="noopener noreferrer"
           class="button--green"
         >
-          Other LTLC resources
+          Other <abbr title="London Transformation and Learning Collaborative">LTLC</abbr> resources
         </a>
       </div>
     </div>
