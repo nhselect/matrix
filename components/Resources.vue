@@ -1,16 +1,20 @@
 <template>
-  <div v-if="resources.length > 0">
-    <picker
-      :resources="resources"
-      @changeModel="links = $event"
-      @clear="links = ''"
-    />
-    <Link
-      v-if="links.length > 0"
-      :links="links"
-      justify="space-around"
-      align="center"
-    />
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third" v-if="resources.length > 0">
+      <picker
+        :resources="resources"
+        @changeModel="links = $event"
+        @clear="links = ''"
+      />
+    </div>
+    <div class="nhsuk-grid-column-two-thirds">
+      <p v-if="links.length > 0">Found <b>{{ links.length }}</b> resources:</p>
+      <p v-if="links.length == 0">No resources found, please use the filters and search bar</p>
+      <Link
+        v-if="links.length > 0"
+        :links="links"
+      />
+    </div>
   </div>
 </template>
 
@@ -37,9 +41,3 @@ export default class Resources extends Vue {
   }
 }
 </script>
-
-<style scoped>
-.margin {
-  margin: 5%;
-}
-</style>

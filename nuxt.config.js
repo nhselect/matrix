@@ -17,7 +17,9 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    '~assets/css/main.css'
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -31,10 +33,20 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/style-resources'
   ],
 
+  styleResources: {
+    scss: [
+      'nhsuk-frontend/packages/core/all.scss',
+      '~assets/variables.scss',
+      '~assets/mixins.scss'
+    ]
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['nuxt-buefy', '@nuxt/content'],
+  // modules: ['nuxt-buefy', '@nuxt/content'],
+  modules: ['@nuxt/content'],
 
   content: {},
 
