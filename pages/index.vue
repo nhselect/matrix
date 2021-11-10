@@ -1,35 +1,31 @@
 <template>
   <div>
     <a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
-    <header class="nhsuk-header" role="banner">
+    <header class="nhsuk-header nhsuk-header--transactional" role="banner">
       <div class="nhsuk-width-container-fluid nhsuk-header__container">
-        <div class="nhsuk-header__logo">
-          <a
-            class="nhsuk-header__link nhsuk-header__link--service"
-            href="/"
-            aria-label="Equipment Resources Homepage"
+        <div class="nhsuk-header__logo nhsuk-header__logo--only">
+          <svg
+            class="nhsuk-logo"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 40 16"
+            height="40"
+            width="100"
           >
-            <svg
-              class="nhsuk-logo"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 40 16"
-              height="40"
-              width="100"
-            >
-              <path
-                class="nhsuk-logo__background"
-                fill="#005eb8"
-                d="M0 0h40v16H0z"
-              ></path>
-              <path
-                class="nhsuk-logo__text"
-                fill="#fff"
-                d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"
-              ></path>
-            </svg>
-            <span class="nhsuk-header__service-name">
-              Equipment Support Resources
-            </span>
+            <path
+              class="nhsuk-logo__background"
+              fill="#005eb8"
+              d="M0 0h40v16H0z"
+            ></path>
+            <path
+              class="nhsuk-logo__text"
+              fill="#fff"
+              d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"
+            ></path>
+          </svg>
+        </div>
+        <div class="nhsuk-header__transactional-service-name">
+          <a class="nhsuk-header__transactional-service-name--link" href="#">
+            Equipment Support Resources
           </a>
         </div>
       </div>
@@ -51,14 +47,27 @@
             some resources.
           </p>
         </div>
-        <div class="links">
+        <div class="nhsuk-action-link">
           <a
             href="https://www.e-lfh.org.uk/programmes/london-transformation-and-learning-collaborative-ltlc/"
+            class="nhsuk-action-link__link"
             target="_blank"
             rel="noopener noreferrer"
-            class="button--green"
           >
-            Other LTLC resources
+            <svg
+              class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              width="36"
+              height="36"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"
+              ></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Other LTLC Resources</span>
           </a>
         </div>
       </main>
@@ -88,4 +97,5 @@ export default {
 <style lang="scss">
 @import 'node_modules/nhsuk-frontend/packages/components/header/header';
 @import 'node_modules/nhsuk-frontend/packages/components/skip-link/skip-link';
+@import 'node_modules/nhsuk-frontend/packages/components/action-link/action-link';
 </style>
