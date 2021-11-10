@@ -1,29 +1,30 @@
 <template>
-    <ul class="nhsuk-grid-row nhsuk-card-group">
-      <li 
-        v-for="link in links"
-        :key="link.id"
-        class="nhsuk-grid-column-full nhsuk-card-group__item"
-      >
-        <div class="nhsuk-card"> 
-          <div class="nhsuk-card__content">
-            <h3 class="nhsuk-card__heading nhsuk-heading-s">
-              <a
-                class="nhsuk-card__link"
-                :href="link.url"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                  {{ link.linkType }}
-              </a>
-            </h3>
-            <p class="nhsuk-card__description nhsuk-body-s">
-              for <b>{{ link.manufacturer }} - {{ link.model }} ({{ link.type }})</b>
-            </p>
-          </div>
+  <ul class="nhsuk-grid-row nhsuk-card-group">
+    <li
+      v-for="link in links"
+      :key="link.id"
+      class="nhsuk-grid-column-full nhsuk-card-group__item"
+    >
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading nhsuk-heading-s">
+            <a
+              class="nhsuk-card__link"
+              :href="link.url"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {{ link.linkType }}
+            </a>
+          </h3>
+          <p class="nhsuk-card__description nhsuk-body-s">
+            for&nbsp;
+            <b>{{ link.manufacturer }} - {{ link.model }} ({{ link.type }})</b>
+          </p>
         </div>
-      </li>
-    </ul>
+      </div>
+    </li>
+  </ul>
 </template>
 
 <script lang="ts">
@@ -47,5 +48,4 @@ h3.nhsuk-heading-s {
 .nhsuk-card-group__item .nhsuk-card {
   margin-bottom: 16px;
 }
-
 </style>

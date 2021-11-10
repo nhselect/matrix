@@ -1,6 +1,6 @@
 <template>
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-one-third" v-if="resources.length > 0">
+    <div v-if="resources.length > 0" class="nhsuk-grid-column-one-third">
       <picker
         :resources="resources"
         @changeModel="links = $event"
@@ -8,12 +8,13 @@
       />
     </div>
     <div class="nhsuk-grid-column-two-thirds">
-      <p v-if="links.length > 0">Found <b>{{ links.length }}</b> resources:</p>
-      <p v-if="links.length == 0">No resources found, please use the filters and search bar</p>
-      <Link
-        v-if="links.length > 0"
-        :links="links"
-      />
+      <p v-if="links.length > 0">
+        Found <b>{{ links.length }}</b> resources:
+      </p>
+      <p v-if="links.length == 0">
+        No resources found, please use the filters and search bar
+      </p>
+      <Link v-if="links.length > 0" :links="links" />
     </div>
   </div>
 </template>

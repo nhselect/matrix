@@ -17,9 +17,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~assets/css/main.css'
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -34,15 +32,15 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     '@nuxtjs/style-resources',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
   ],
 
   styleResources: {
     scss: [
       'nhsuk-frontend/packages/core/all.scss',
       '~assets/variables.scss',
-      '~assets/mixins.scss'
-    ]
+      '~assets/mixins.scss',
+    ],
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
