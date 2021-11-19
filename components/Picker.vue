@@ -167,6 +167,7 @@ export default class Picker extends Vue {
       return resource
     }
 
+    this.results = 0
     return ''
   }
 
