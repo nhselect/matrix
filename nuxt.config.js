@@ -50,10 +50,16 @@ export default {
   content: {},
 
   pwa: {
+    icon: {
+      fileName: 'icon_ltlc.png',
+    },
     meta: {
       mobileAppIOS: true,
       appleStatusBarStyle: 'black-translucent',
-      name: 'LTLC Equipment Resources',
+      name: 'LTLCEquipmentResource',
+    },
+    manifest: {
+      name: 'LTLC Equipment Matrix',
     },
   },
 
