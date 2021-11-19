@@ -1,6 +1,7 @@
 {
   "name": "ltlc-equipment-matrix",
   "version": "1.0.0",
+  "author": "LTLC@hee.nhs.uk",
   "private": true,
   "scripts": {
     "dev": "nuxt",

@@ -35,6 +35,14 @@ export default {
     '@nuxtjs/pwa',
   ],
 
+  pwa: {
+    meta: {
+      mobileAppIOS: true,
+      appleStatusBarStyle: 'black-translucent',
+      name: 'LTLC Equipment Resources',
+    },
+  },
+
   styleResources: {
     scss: [
       'nhsuk-frontend/packages/core/all.scss',
