@@ -1,16 +1,27 @@
 <template>
-  <div v-if="resources.length > 0">
-    <picker
-      :resources="resources"
-      @changeModel="links = $event"
-      @clear="links = ''"
-    />
-    <Link
-      v-if="links.length > 0"
-      :links="links"
-      justify="space-around"
-      align="center"
-    />
+  <div class="nhsuk-grid-row">
+    <div v-if="resources.length > 0" class="nhsuk-grid-column-one-third">
+      <picker
+        :resources="resources"
+        @changeModel="links = $event"
+        @clear="links = ''"
+      />
+    </div>
+    <div class="nhsuk-grid-column-two-thirds">
+      <div id="resources" class="nhsuk-card ltlc-resources">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading">Resources</h2>
+          <p v-if="links.length > 0">
+            Found resources for <b>{{ links.length }}</b> devices:
+          </p>
+          <p v-if="links.length == 0">
+            Start searching using the
+            <a href="#maincontent">filters or search bar</a>.
+          </p>
+          <Link v-if="links.length > 0" :links="links" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -39,7 +50,7 @@ export default class Resources extends Vue {
 </script>
 
 <style scoped>
-.margin {
-  margin: 5%;
+.ltlc-resources {
+  background: transparent;
 }
 </style>

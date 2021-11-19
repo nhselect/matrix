@@ -31,12 +31,36 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/pwa',
   ],
 
+  styleResources: {
+    scss: [
+      '~assets/scss/_variables.scss',
+      'nhsuk-frontend/packages/core/all.scss',
+    ],
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['nuxt-buefy', '@nuxt/content'],
+  // modules: ['nuxt-buefy', '@nuxt/content'],
+  modules: ['@nuxt/content'],
 
   content: {},
+
+  pwa: {
+    icon: {
+      fileName: 'icon_ltlc.png',
+    },
+    meta: {
+      mobileAppIOS: true,
+      appleStatusBarStyle: 'black-translucent',
+      name: 'LTLCEquipmentResource',
+    },
+    manifest: {
+      name: 'LTLC Equipment Matrix',
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

@@ -1,13 +1,35 @@
 <template>
-  <img class="logo" src="~/assets/img/logo.png" />
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-half">
+      <a
+        href="https://www.e-lfh.org.uk/programmes/london-transformation-and-learning-collaborative-ltlc/"
+        target="_blank"
+      >
+        <img
+          class="ltlc__programme-logo"
+          src="~/assets/img/adult_cc_logo.png"
+          alt="Adult Critical Care Programme"
+        />
+      </a>
+    </div>
+    <div class="nhsuk-grid-column-one-half">
+      <a
+        href="https://www.e-lfh.org.uk/programmes/respiratory_surge_in_children/"
+        target="_blank"
+      >
+        <img
+          class="ltlc__programme-logo"
+          src="~/assets/img/respsurge_logo.png"
+          alt="Respiratory Surge in Children Programme"
+        />
+      </a>
+    </div>
+  </div>
 </template>
 
 <style>
-.logo {
-  margin-top: 15px;
-  max-width: 995px;
-  width: 100%;
-  height: auto;
+.ltlc__programme-logo {
+  max-width: 100%;
 }
 
 .NuxtLogo {
