@@ -23,23 +23,18 @@
             ></path>
           </svg>
         </div>
-        <div class="nhsuk-header__transactional-service-name">
-          <a class="nhsuk-header__transactional-service-name--link" href="#">
-            Equipment Support Resources
-          </a>
-        </div>
       </div>
     </header>
     <div class="nhsuk-width-container-fluid">
-      <Logo />
       <main id="maincontent" class="nhsuk-main-wrapper" role="main">
-        <h1>Equipment Support Resource</h1>
-        <h2 class="nhsuk-heading-s">
-          Use the dropdowns below to pull up useful resources
-        </h2>
+        <h1>Equipment Support Resources</h1>
+        <p class="nhsuk__lead">
+          We currently have resources for <b>134</b> medical devices. Use the
+          search bar or the drop down boxes below to find specific resources.
+        </p>
         <Resources />
         <div class="links">
-          <h3 class="h3">Can't find what you are looking for?</h3>
+          <h2>Can't find what you are looking for?</h2>
           <p>
             Please email
             <a href="mailto:LTLC@hee.nhs.uk">LTLC@hee.nhs.uk</a> stating the
@@ -47,28 +42,9 @@
             some resources.
           </p>
         </div>
-        <div class="nhsuk-action-link">
-          <a
-            href="https://www.e-lfh.org.uk/programmes/london-transformation-and-learning-collaborative-ltlc/"
-            class="nhsuk-action-link__link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg
-              class="nhsuk-icon nhsuk-icon__arrow-right-circle"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              width="36"
-              height="36"
-            >
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path
-                d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"
-              ></path>
-            </svg>
-            <span class="nhsuk-action-link__text">Other LTLC Resources</span>
-          </a>
+        <div>
+          <h2>Find more training resources on our LTLC programme pages</h2>
+          <Logo />
         </div>
       </main>
     </div>
@@ -98,4 +74,5 @@ export default {
 @import 'node_modules/nhsuk-frontend/packages/components/header/header';
 @import 'node_modules/nhsuk-frontend/packages/components/skip-link/skip-link';
 @import 'node_modules/nhsuk-frontend/packages/components/action-link/action-link';
+@import 'node_modules/nhsuk-frontend/packages/components/footer/footer';
 </style>

@@ -1,21 +1,28 @@
 <template>
-  <div class="nhsuk-fieldset">
+  <div id="picker" class="nhsuk-fieldset">
     <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="Search">Search</label>
+      <label class="nhsuk-label" for="search">What are you looking for?</label>
       <input
+        id="search"
         v-model="searchQuery"
         class="nhsuk-input nhsuk-u-width-full"
-        name="example"
+        name="Search"
         type="text"
-        placeholder=""
+        placeholder="e.g. model, type, keywords"
       />
+      <p v-if="results > 0">
+        <strong class="nhsuk-tag nhsuk-tag--green">
+          <a href="#resources">Found resources for {{ results }} devices</a>
+        </strong>
+      </p>
     </div>
     <p><b>Or</b></p>
     <div class="nhsuk-form-group" label="Resource Type">
       <label class="nhsuk-label" for="type">
-        Resource Type <small>({{ getTypes().length }})</small>
+        Resource Type <small>({{ getTypes().length }} types)</small>
       </label>
       <select
+        id="type"
         v-model="type"
         placeholder="Resource Type"
         class="nhsuk-select nhsuk-u-width-full"
@@ -33,9 +40,11 @@
     </div>
     <div class="nhsuk-form-group" label="Manufacturer">
       <label class="nhsuk-label" for="manufacturer">
-        Manufacturer <small>({{ getManufacturers().length }})</small>
+        Manufacturer
+        <small>({{ getManufacturers().length }} manufacturers)</small>
       </label>
       <select
+        id="manufacturer"
         v-model="manufacturer"
         placeholder="Manufacturer"
         class="nhsuk-select nhsuk-u-width-full"
@@ -53,9 +62,10 @@
     </div>
     <div class="nhsuk-form-group" label="Model">
       <label class="nhsuk-label" for="model">
-        Model <small>({{ getModels().length }})</small>
+        Model <small>({{ getModels().length }} models)</small>
       </label>
       <select
+        id="model"
         v-model="model"
         placeholder="Model"
         class="nhsuk-select nhsuk-u-width-full"
@@ -90,6 +100,7 @@ export default class Picker extends Vue {
   type = ''
   manufacturer = ''
   model = ''
+  results = 0
 
   getTypes() {
     return [
@@ -142,6 +153,7 @@ export default class Picker extends Vue {
     this.type = ''
     this.manufacturer = ''
     this.model = ''
+    this.results = 0
 
     const resource = this.resources.filter((resource) => {
       return this.searchQuery
@@ -151,17 +163,8 @@ export default class Picker extends Vue {
     })
 
     if (resource && resource.length > 0) {
+      this.results = resource.length
       return resource
-        .map((resource) =>
-          resource.links.map((link) => ({
-            url: link.url,
-            linkType: link.linkType,
-            type: resource.type,
-            manufacturer: resource.manufacturer,
-            model: resource.model,
-          }))
-        )
-        .flat()
     }
 
     return ''
@@ -177,24 +180,20 @@ export default class Picker extends Vue {
       )
     })
 
-    if (resource && resource[0].links) {
-      return resource[0].links.map((link) => ({
-        url: link.url,
-        linkType: link.linkType,
-        type: resource[0].type,
-        manufacturer: resource[0].manufacturer,
-        model: resource[0].model,
-      }))
+    if (resource && resource.length > 0) {
+      return resource
     }
 
     return ''
   }
 
+  // clear all filters
   clearFilters() {
     this.searchQuery = ''
     this.type = ''
     this.manufacturer = ''
     this.model = ''
+    this.results = 0
   }
 
   @Watch('searchQuery')
@@ -260,4 +259,5 @@ export default class Picker extends Vue {
 @import 'node_modules/nhsuk-frontend/packages/components/select/select';
 @import 'node_modules/nhsuk-frontend/packages/components/label/label';
 @import 'node_modules/nhsuk-frontend/packages/components/input/input';
+@import 'node_modules/nhsuk-frontend/packages/components/tag/tag';
 </style>
