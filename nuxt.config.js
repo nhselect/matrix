@@ -37,9 +37,8 @@ export default {
 
   styleResources: {
     scss: [
+      '~assets/scss/_variables.scss',
       'nhsuk-frontend/packages/core/all.scss',
-      '~assets/variables.scss',
-      '~assets/mixins.scss',
     ],
   },
 
