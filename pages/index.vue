@@ -43,6 +43,15 @@
           </p>
         </div>
         <div>
+          <h2>Install on your phone</h2>
+          <p>
+            You can install this as an app on your phone by accessing your
+            browser settings/share settings and selecting
+            <strong>Add to Home Screen</strong>
+            (please note: steps vary between devices and browsers)
+          </p>
+        </div>
+        <div>
           <h2>Find more training resources on our LTLC programme pages</h2>
           <Logo />
         </div>
