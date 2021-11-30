@@ -1,5 +1,5 @@
 ---
-type: Point Of Care
+type: Point of Care
 manufacturer: ABG - I-Stat
 model: I-Stat
 links:
